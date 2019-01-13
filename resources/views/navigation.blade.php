@@ -1,4 +1,4 @@
-@if (Auth::user()->can('viewAny', app(\Spatie\Permission\PermissionRegistrar::class)->getRoleClass()) || Auth::user()->can('viewAny', app(\Spatie\Permission\PermissionRegistrar::class)->getPermissionClass()))
+@hasrole('Superuser')
     <h3 class="flex items-center font-normal text-white mb-6 text-base no-underline">
         <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path fill="var(--sidebar-icon)"
@@ -38,4 +38,4 @@
         @endcan
 
     </ul>
-@endif
+@endhasrole
